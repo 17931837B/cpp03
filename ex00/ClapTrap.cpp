@@ -43,11 +43,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& src)
 	return (*this);
 }
 
-unsigned int ClapTrap::getDamege(void) const
-{
-	return (this->AttackDamage);
-}
-
 void ClapTrap::attack(const std::string &target)
 {
 	if (this->HitPoint <= 0)
