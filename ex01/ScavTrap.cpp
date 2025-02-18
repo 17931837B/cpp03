@@ -67,7 +67,7 @@ void ScavTrap::attack(const std::string &target)
 		std::cout << "ScavTrap " << this->name << " tried to attack. But, " << this->name << " lacks EnergyPoint.\n";
 	else
 	{
-		std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->AttackDamage << " points of damage!\n";
+		std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->AttackDamage << " points of damage!\n";
 		this->EnergyPoint--;
 	}
 	std::cout << "[" << this->name << "]" << " HP:" << this->HitPoint << " EP:" << this->EnergyPoint << "\n";

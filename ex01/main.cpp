@@ -2,16 +2,21 @@
 #include "ScavTrap.hpp"
 
 int main() {
-	// ClapTrap clap("Clap");
+	ClapTrap* list[2];
+	ClapTrap clap("Clap");
 	ScavTrap scav("Scav");
 
-	// clap.attack("S");
+	list[0] = &clap;
+	list[1] = &scav;
+	list[0]->attack("S"); //オーバーライド
+	list[1]->attack("C");
+	clap.attack("S");
 	// clap.takeDamage(5);
 	// clap.beRepaired(3);
 
 	scav.attack("C");
-	scav.takeDamage(42);
-	scav.beRepaired(420);
-	scav.guardGate();
+	// scav.takeDamage(42);
+	// scav.beRepaired(420);
+	// scav.guardGate();
 	return (0);
 }
