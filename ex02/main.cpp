@@ -30,10 +30,11 @@ int main() {
 	// clap.beRepaired(3);
 
 	scav.attack("C");
-	// scav.takeDamage(42);
+	scav.takeDamage(-42);
 	// scav.beRepaired(420);
 	// scav.guardGate();
-	frag.attack("F");
-	frag.highFivesGuys();
+	// frag.attack("F");
+	// frag.highFivesGuys();
+	// scav.beRepaired(4294967295);
 	return (0);
 }

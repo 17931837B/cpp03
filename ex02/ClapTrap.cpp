@@ -74,8 +74,13 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout	<< "ClapTrap " << this->name << " took " << amount << " damage.\n";
-	if (amount > this->HitPoint)
+	std::cout << "ClapTrap " << this->name << " took " << amount << " damage.\n";
+	if (amount < 0 || amount > 2147483647)
+	{
+		std::cout << "ClapTrap " << amount << " wrong input\n";
+		return ;
+	}
+	else if (amount > this->HitPoint)
 		this->HitPoint = 0;
 	else
 		this->HitPoint -= amount;
@@ -88,16 +93,27 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (amount < 0 || amount > 2147483647)
+	{
+		std::cout << "ClapTrap " << amount << " wrong input\n";
+		return ;
+	}
 	if (this->HitPoint <= 0)
 		std::cout << "ClapTrap " << this->name << " tried to recover. But, " << this->name << " is already dead.\n";
 	else if (this->EnergyPoint <= 0)
 		std::cout << "ClapTrap " << this->name << " tried to recover. But, " << this->name << " lacks EnergyPoint.\n";
+	else if (amount < 0 && amount > 100000)
+	{
+		std::cout << "ClapTrap " << amount << " wrong input\n";
+		return ;
+	}
 	else
 	{
-		if (amount + this->HitPoint > this->MaxHitPoint)
-			this->HitPoint = this->MaxHitPoint;
-		else
-			this->HitPoint += amount;
+		// if (amount + this->HitPoint > this->MaxHitPoint)
+		// 	this->HitPoint = this->MaxHitPoint;
+		// else
+		// 	this->HitPoint += amount;
+		this->HitPoint += std::min(amount, this->MaxHitPoint - this->HitPoint);
 		this->EnergyPoint--;
 		std::cout << "ClapTrap " << this->name << " recovered from " << amount << " damage.\n";
 	}
