@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tobaba <tobaba@student.42.fr>              #+#  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025-02-20 03:35:11 by tobaba            #+#    #+#             */
+/*   Updated: 2025-02-20 03:35:11 by tobaba           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(void) 
@@ -58,4 +69,3 @@ void FragTrap::highFivesGuys(void)
 	}
 	std::cout << "[" << this->name << "]" << " HP:" << this->HitPoint << " EP:" << this->EnergyPoint << "\n";
 }
-
